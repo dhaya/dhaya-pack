@@ -1,0 +1,6 @@
+[submodule "lib/haskell-mode"]
+	path = lib/haskell-mode
+	url = https://github.com/haskell/haskell-mode.git
+[submodule "lib/idris-mode"]
+	path = lib/idris-mode
+	url = https://github.com/idris-hackers/idris-mode.git
