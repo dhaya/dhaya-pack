@@ -22,6 +22,11 @@
 (live-add-pack-lib "hs-lint")
 (require 'hs-lint)
 
+(add-to-list 'load-path "/home/dhaya/projects/dhaya-pack/lib/structured-haskell-mode/elisp")
+;;(live-add-pack-lib "structured-haskell-mode/elisp/")
+(require 'shm)
+(add-hook 'haskell-mode-hook 'shm)
+
 (defun my-haskell-mode-hook ()
   "hs-lint binding, plus autocompletion and paredit."
   (local-set-key "\C-cl" 'hs-lint)
@@ -58,6 +63,7 @@
 (custom-set-faces
  '(flymake-errline ((((class color)) (:underline "red"))))
  '(flymake-warnline ((((class color)) (:underline "yellow")))))
+
 
 (eval-after-load 'haskell-mode
   '(progn
