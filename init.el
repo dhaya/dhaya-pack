@@ -22,10 +22,10 @@
 (live-add-pack-lib "hs-lint")
 (require 'hs-lint)
 
-(add-to-list 'load-path "/home/dhaya/projects/dhaya-pack/lib/structured-haskell-mode/elisp")
+;(add-to-list 'load-path "/home/dhaya/projects/dhaya-pack/lib/structured-haskell-mode/elisp")
 ;;(live-add-pack-lib "structured-haskell-mode/elisp/")
-(require 'shm)
-(add-hook 'haskell-mode-hook 'shm)
+;(require 'shm)
+;(add-hook 'haskell-mode-hook 'shm)
 
 (defun my-haskell-mode-hook ()
   "hs-lint binding, plus autocompletion and paredit."
@@ -71,6 +71,10 @@
      (push '("\\.l?hs\\'" flymake-haskell-init) flymake-allowed-file-name-masks)
      (add-hook 'haskell-mode-hook 'flymake-haskell-enable)
      (add-hook 'haskell-mode-hook 'my-haskell-mode-hook)))
+
+(require 'haskell-cabal)
+
+(setq haskell-program-name "cabal exec ghci")
 
 ;; load idris-mode
 (live-add-pack-lib "idris-mode")
